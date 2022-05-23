@@ -1,0 +1,12 @@
+<h2>Search Books</h2>
+<form action="/books" method="get">
+  <label for="name">Name</label>
+  <input type="text" name="name" value="<%= searchOptions %> ">
+  <button type="submit">Search</button>
+</form>
+<br><br>
+<% books.map((book)=>{
+%>
+<div><%= book.name %></div>
+<%
+}) %> 

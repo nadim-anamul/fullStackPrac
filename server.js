@@ -8,6 +8,7 @@ const expressLayout = require('express-ejs-layouts');
 const port = process.env.PORT || 3000;
 const indexRoute = require('./routes/index');
 const authorRoute = require('./routes/authors');
+const bookRoute = require('./routes/books');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 app.set('view engine', 'ejs');
@@ -23,5 +24,6 @@ db.once('open', () => console.log('Connected to mongo'));
 
 app.use('/', indexRoute);
 app.use('/authors', authorRoute);
+app.use('/books', bookRoute);
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
